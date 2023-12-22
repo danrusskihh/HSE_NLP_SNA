@@ -1,0 +1,1933 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\usepackage[margin=1in]{geometry}
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\usepackage{fontspec}
+\setmainfont{Times New Roman}
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={Анализ сетевой структуры научных руководителей},
+  pdfauthor={Русских Данила, Кушниров Андрей},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+
+\title{Анализ сетевой структуры научных руководителей}
+\author{Русских Данила, Кушниров Андрей}
+\date{2023-12-22}
+
+\begin{document}
+\maketitle
+
+\hypertarget{ux43eux43fux438ux441ux430ux43dux438ux435-ux434ux430ux43dux43dux44bux445}{%
+\subsection{0. Описание
+данных}\label{ux43eux43fux438ux441ux430ux43dux438ux435-ux434ux430ux43dux43dux44bux445}}
+
+Открытая база данных всех выпускных квалификационных работ (ВКР)
+студентов НИУ ВШЭ позволила с лёгкостью собрать для дальнейшего анализа
+названия ВКР выпускников Факультета социальных наук за 2022 и 2023 годы,
+авторов работ, их научных руководителей и оценки за работы. Для этого на
+самом сайте были поставлены соответствующие фильтры, а потом с помощью
+библиотек beautifulsoup4 и requests был произведен парсинг данных с
+помощью цикла, который прошелся по всем станицам. К сожалению, не
+удалось имплементировать в изначальный цикл сбор данных за 2023 год,
+поэтому просто были созданы два соответствующих цикла для каждого года.
+Далее база данных за 2022 год была объединена с базой за 2023, в
+итоговом датасете собраны 289 строк, то есть ВКР с оценками. Было
+принято решение сохранить данные в формате csv для ускорения
+последующего анализа. Итоговая база данных представляет собой csv-файл,
+где для каждой ВКР есть столбцы с названием работы, ФИО автора,
+полученной по выпуску ступенью образования (бакалавриат/магистратура),
+годом выпуска, оценкой и ФИО научного руководителя. Для последующего
+анализа из базы данных был сделан edge list, где каждая строка описывает
+отношение между студентом и научным руководителем, а также включает
+дополнительную информацию об оценке за выпускную работу:
+
+source: ФИО студента. Это поле представляет ``источник'' в отношении
+между студентом и научным руководителем. В контексте направленного
+графа, ребро исходит от студента.
+
+target: ФИО научного руководителя. Это поле представляет ``цель'' или
+``пункт назначения'' отношения. Ребро ведёт к научному руководителю.
+
+weight: Оценка, которую студент получил за выпускную работу. Это поле
+может быть использовано для представления ``веса'' ребра в взвешенном
+графе, где вес может указывать на силу или важность отношения.
+
+\hypertarget{ux438ux441ux441ux43bux435ux434ux43eux432ux430ux442ux435ux43bux44cux441ux43aux430ux44f-ux43fux440ux43eux431ux43bux435ux43cux430-ux433ux438ux43fux43eux442ux435ux437ux44b-ux438-ux434ux438ux437ux430ux439ux43d-ux438ux441ux441ux43bux435ux434ux43eux432ux430ux43dux438ux44f}{%
+\subsection{1. Исследовательская проблема, гипотезы и дизайн
+исследования}\label{ux438ux441ux441ux43bux435ux434ux43eux432ux430ux442ux435ux43bux44cux441ux43aux430ux44f-ux43fux440ux43eux431ux43bux435ux43cux430-ux433ux438ux43fux43eux442ux435ux437ux44b-ux438-ux434ux438ux437ux430ux439ux43d-ux438ux441ux441ux43bux435ux434ux43eux432ux430ux43dux438ux44f}}
+
+\hypertarget{ux438ux441ux441ux43bux435ux434ux43eux432ux430ux442ux435ux43bux44cux441ux43aux430ux44f-ux43fux440ux43eux431ux43bux435ux43cux430}{%
+\subsubsection{Исследовательская
+проблема:}\label{ux438ux441ux441ux43bux435ux434ux43eux432ux430ux442ux435ux43bux44cux441ux43aux430ux44f-ux43fux440ux43eux431ux43bux435ux43cux430}}
+
+Выявление взаимосвязи между структурой сети научных руководителей и
+выпускников Факультета социальных наук НИУ ВШЭ за 2022-2023 годы и
+итоговой оценкой за ВКР, с акцентом на роль центральности научных
+руководителей и их влияние на распределение оценок среди студентов.
+
+\hypertarget{ux433ux438ux43fux43eux442ux435ux437ux44b}{%
+\subsubsection{Гипотезы:}\label{ux433ux438ux43fux43eux442ux435ux437ux44b}}
+
+\textbf{H1}: Студенты, научные руководители которых имеют высокую
+степень центральности в сети, склонны получать более высокие оценки за
+свои дипломные работы.
+
+\textbf{H2}: Руководители с высокой межпосреднической центральностью
+оказывают более широкое влияние на итоговую оценку студентов, что
+потенциально может привести к более разнообразным оценкам за диплом.
+
+\textbf{H3}: Научные руководители, работающие с большим количеством
+студентов, имеют более высокую степень входящих связей в сети. Это может
+влиять на структуру сети, увеличивая вероятность наличия связей между
+студентами этих научных руководителей.
+
+\hypertarget{ux434ux438ux437ux430ux439ux43d-ux438ux441ux441ux43bux435ux434ux43eux432ux430ux43dux438ux44f}{%
+\subsubsection{Дизайн
+Исследования:}\label{ux434ux438ux437ux430ux439ux43d-ux438ux441ux441ux43bux435ux434ux43eux432ux430ux43dux438ux44f}}
+
+Мы будем использовать методы анализа сетей для изучения структуры сети
+научных руководителей и студентов, рассчитаем различные меры
+центральности и проанализируем диадические и триадические отношения. Мы
+также будем использовать статистические модели для проверки гипотез,
+связанных с социальным отбором и влиянием.
+
+\hypertarget{ux437ux430ux433ux440ux443ux437ux43aux430-ux434ux430ux43dux43dux44bux445-ux438-ux432ux438ux437ux443ux430ux43bux438ux437ux430ux446ux438ux44f}{%
+\subsection{2. Загрузка данных и
+визуализация}\label{ux437ux430ux433ux440ux443ux437ux43aux430-ux434ux430ux43dux43dux44bux445-ux438-ux432ux438ux437ux443ux430ux43bux438ux437ux430ux446ux438ux44f}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#install.packages("igraph")}
+\CommentTok{\#install.packages("network")}
+\CommentTok{\#install.packages("sna")}
+\CommentTok{\#install.packages("ergm")}
+
+\FunctionTok{library}\NormalTok{(igraph)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+## Attaching package: 'igraph'
+\end{verbatim}
+
+\begin{verbatim}
+## The following objects are masked from 'package:stats':
+## 
+##     decompose, spectrum
+\end{verbatim}
+
+\begin{verbatim}
+## The following object is masked from 'package:base':
+## 
+##     union
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(network)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+## 'network' 1.18.1 (2023-01-24), part of the Statnet Project
+## * 'news(package="network")' for changes since last version
+## * 'citation("network")' for citation information
+## * 'https://statnet.org' for help, support, and other information
+\end{verbatim}
+
+\begin{verbatim}
+## 
+## Attaching package: 'network'
+\end{verbatim}
+
+\begin{verbatim}
+## The following objects are masked from 'package:igraph':
+## 
+##     %c%, %s%, add.edges, add.vertices, delete.edges, delete.vertices,
+##     get.edge.attribute, get.edges, get.vertex.attribute, is.bipartite,
+##     is.directed, list.edge.attributes, list.vertex.attributes,
+##     set.edge.attribute, set.vertex.attribute
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(sna)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Loading required package: statnet.common
+\end{verbatim}
+
+\begin{verbatim}
+## 
+## Attaching package: 'statnet.common'
+\end{verbatim}
+
+\begin{verbatim}
+## The following objects are masked from 'package:base':
+## 
+##     attr, order
+\end{verbatim}
+
+\begin{verbatim}
+## sna: Tools for Social Network Analysis
+## Version 2.7-1 created on 2023-01-24.
+## copyright (c) 2005, Carter T. Butts, University of California-Irvine
+##  For citation information, type citation("sna").
+##  Type help(package="sna") to get started.
+\end{verbatim}
+
+\begin{verbatim}
+## 
+## Attaching package: 'sna'
+\end{verbatim}
+
+\begin{verbatim}
+## The following objects are masked from 'package:igraph':
+## 
+##     betweenness, bonpow, closeness, components, degree, dyad.census,
+##     evcent, hierarchy, is.connected, neighborhood, triad.census
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(ergm)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+## 'ergm' 4.5.0 (2023-05-27), part of the Statnet Project
+## * 'news(package="ergm")' for changes since last version
+## * 'citation("ergm")' for citation information
+## * 'https://statnet.org' for help, support, and other information
+\end{verbatim}
+
+\begin{verbatim}
+## 'ergm' 4 is a major update that introduces some backwards-incompatible
+## changes. Please type 'news(package="ergm")' for a list of major
+## changes.
+\end{verbatim}
+
+\begin{verbatim}
+## 
+## Attaching package: 'ergm'
+\end{verbatim}
+
+\begin{verbatim}
+## The following object is masked from 'package:statnet.common':
+## 
+##     snctrl
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{edge\_list }\OtherTok{\textless{}{-}} \FunctionTok{read.csv}\NormalTok{(}\StringTok{"\textasciitilde{}/Desktop/NLP\_SNA/SNA/edge\_list.csv"}\NormalTok{)}
+
+\NormalTok{g }\OtherTok{\textless{}{-}}\NormalTok{ igraph}\SpecialCharTok{::}\FunctionTok{graph\_from\_data\_frame}\NormalTok{(edge\_list, }\AttributeTok{directed =} \ConstantTok{TRUE}\NormalTok{)}
+\FunctionTok{E}\NormalTok{(g)}\SpecialCharTok{$}\NormalTok{grades }\OtherTok{\textless{}{-}}\NormalTok{ edge\_list}\SpecialCharTok{$}\NormalTok{weight}
+
+\NormalTok{vertex\_sizes }\OtherTok{\textless{}{-}}\NormalTok{ igraph}\SpecialCharTok{::}\FunctionTok{degree}\NormalTok{(g) }\SpecialCharTok{*} \DecValTok{3} \SpecialCharTok{+} \DecValTok{10}
+
+\NormalTok{vertex\_colors }\OtherTok{\textless{}{-}} \FunctionTok{ifelse}\NormalTok{(igraph}\SpecialCharTok{::}\FunctionTok{V}\NormalTok{(g)}\SpecialCharTok{$}\NormalTok{name }\SpecialCharTok{\%in\%}\NormalTok{ edge\_list}\SpecialCharTok{$}\NormalTok{source, }\StringTok{"lightblue"}\NormalTok{, }\StringTok{"lightgreen"}\NormalTok{)}
+\NormalTok{edge\_colors }\OtherTok{\textless{}{-}} \FunctionTok{ifelse}\NormalTok{(igraph}\SpecialCharTok{::}\FunctionTok{E}\NormalTok{(g)}\SpecialCharTok{$}\NormalTok{weight }\SpecialCharTok{\textgreater{}=} \DecValTok{4}\NormalTok{, }\StringTok{"darkgreen"}\NormalTok{, }\StringTok{"red"}\NormalTok{)}
+
+\NormalTok{igraph}\SpecialCharTok{::}\FunctionTok{plot.igraph}\NormalTok{(g, }
+     \AttributeTok{vertex.size =}\NormalTok{ vertex\_sizes, }
+     \AttributeTok{vertex.color =}\NormalTok{ vertex\_colors, }
+     \AttributeTok{edge.width =} \DecValTok{2}\NormalTok{, }\CommentTok{\# толщина рёбер}
+     \AttributeTok{edge.arrow.size =} \FloatTok{0.2}\NormalTok{, }\CommentTok{\# размер стрелок}
+     \AttributeTok{edge.color =}\NormalTok{ edge\_colors, }
+     \AttributeTok{layout =}\NormalTok{ igraph}\SpecialCharTok{::}\FunctionTok{layout\_with\_kk}\NormalTok{(g, }\AttributeTok{maxiter =} \DecValTok{5000}\NormalTok{), }\CommentTok{\# увеличение расстояния между узлами}
+     \AttributeTok{main =} \StringTok{"Визуализация сети выпускников ФСН НИУ ВШЭ }
+\StringTok{     и их научных руководителей"}\NormalTok{, }
+     \AttributeTok{xlab =} \StringTok{""}\NormalTok{, }
+     \AttributeTok{ylab =} \StringTok{""}\NormalTok{,}
+     \AttributeTok{vertex.label =} \ConstantTok{NA}\NormalTok{, }
+     \AttributeTok{edge.lty =} \DecValTok{1}\NormalTok{,}
+     \AttributeTok{edge.arrow.mode =} \DecValTok{0}
+\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Warning in title(...): conversion failure on 'Визуализация сети выпускников ФСН
+## НИУ ВШЭ ' in 'mbcsToSbcs': dot substituted for <d0>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in title(...): conversion failure on 'Визуализация сети выпускников ФСН
+## НИУ ВШЭ ' in 'mbcsToSbcs': dot substituted for <92>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in title(...): conversion failure on 'Визуализация сети выпускников ФСН
+## НИУ ВШЭ ' in 'mbcsToSbcs': dot substituted for <d0>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in title(...): conversion failure on 'Визуализация сети выпускников ФСН
+## НИУ ВШЭ ' in 'mbcsToSbcs': dot substituted for <b8>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in title(...): conversion failure on 'Визуализация сети выпускников ФСН
+## НИУ ВШЭ ' in 'mbcsToSbcs': dot substituted for <d0>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in title(...): conversion failure on 'Визуализация сети выпускников ФСН
+## НИУ ВШЭ ' in 'mbcsToSbcs': dot substituted for <b7>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in title(...): conversion failure on 'Визуализация сети выпускников ФСН
+## НИУ ВШЭ ' in 'mbcsToSbcs': dot substituted for <d1>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in title(...): conversion failure on 'Визуализация сети выпускников ФСН
+## НИУ ВШЭ ' in 'mbcsToSbcs': dot substituted for <83>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in title(...): conversion failure on 'Визуализация сети выпускников ФСН
+## НИУ ВШЭ ' in 'mbcsToSbcs': dot substituted for <d0>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in title(...): conversion failure on 'Визуализация сети выпускников ФСН
+## НИУ ВШЭ ' in 'mbcsToSbcs': dot substituted for <b0>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in title(...): conversion failure on 'Визуализация сети выпускников ФСН
+## НИУ ВШЭ ' in 'mbcsToSbcs': dot substituted for <d0>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in title(...): conversion failure on 'Визуализация сети выпускников ФСН
+## НИУ ВШЭ ' in 'mbcsToSbcs': dot substituted for <bb>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in title(...): conversion failure on 'Визуализация сети выпускников ФСН
+## НИУ ВШЭ ' in 'mbcsToSbcs': dot substituted for <d0>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in title(...): conversion failure on 'Визуализация сети выпускников ФСН
+## НИУ ВШЭ ' in 'mbcsToSbcs': dot substituted for <b8>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in title(...): conversion failure on 'Визуализация сети выпускников ФСН
+## НИУ ВШЭ ' in 'mbcsToSbcs': dot substituted for <d0>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in title(...): conversion failure on 'Визуализация сети выпускников ФСН
+## НИУ ВШЭ ' in 'mbcsToSbcs': dot substituted for <b7>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in title(...): conversion failure on 'Визуализация сети выпускников ФСН
+## НИУ ВШЭ ' in 'mbcsToSbcs': dot substituted for <d0>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in title(...): conversion failure on 'Визуализация сети выпускников ФСН
+## НИУ ВШЭ ' in 'mbcsToSbcs': dot substituted for <b0>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in title(...): conversion failure on 'Визуализация сети выпускников ФСН
+## НИУ ВШЭ ' in 'mbcsToSbcs': dot substituted for <d1>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in title(...): conversion failure on 'Визуализация сети выпускников ФСН
+## НИУ ВШЭ ' in 'mbcsToSbcs': dot substituted for <86>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in title(...): conversion failure on 'Визуализация сети выпускников ФСН
+## НИУ ВШЭ ' in 'mbcsToSbcs': dot substituted for <d0>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in title(...): conversion failure on 'Визуализация сети выпускников ФСН
+## НИУ ВШЭ ' in 'mbcsToSbcs': dot substituted for <b8>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in title(...): conversion failure on 'Визуализация сети выпускников ФСН
+## НИУ ВШЭ ' in 'mbcsToSbcs': dot substituted for <d1>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in title(...): conversion failure on 'Визуализация сети выпускников ФСН
+## НИУ ВШЭ ' in 'mbcsToSbcs': dot substituted for <8f>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in title(...): conversion failure on 'Визуализация сети выпускников ФСН
+## НИУ ВШЭ ' in 'mbcsToSbcs': dot substituted for <d1>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in title(...): conversion failure on 'Визуализация сети выпускников ФСН
+## НИУ ВШЭ ' in 'mbcsToSbcs': dot substituted for <81>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in title(...): conversion failure on 'Визуализация сети выпускников ФСН
+## НИУ ВШЭ ' in 'mbcsToSbcs': dot substituted for <d0>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in title(...): conversion failure on 'Визуализация сети выпускников ФСН
+## НИУ ВШЭ ' in 'mbcsToSbcs': dot substituted for <b5>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in title(...): conversion failure on 'Визуализация сети выпускников ФСН
+## НИУ ВШЭ ' in 'mbcsToSbcs': dot substituted for <d1>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in title(...): conversion failure on 'Визуализация сети выпускников ФСН
+## НИУ ВШЭ ' in 'mbcsToSbcs': dot substituted for <82>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in title(...): conversion failure on 'Визуализация сети выпускников ФСН
+## НИУ ВШЭ ' in 'mbcsToSbcs': dot substituted for <d0>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in title(...): conversion failure on 'Визуализация сети выпускников ФСН
+## НИУ ВШЭ ' in 'mbcsToSbcs': dot substituted for <b8>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in title(...): conversion failure on 'Визуализация сети выпускников ФСН
+## НИУ ВШЭ ' in 'mbcsToSbcs': dot substituted for <d0>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in title(...): conversion failure on 'Визуализация сети выпускников ФСН
+## НИУ ВШЭ ' in 'mbcsToSbcs': dot substituted for <b2>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in title(...): conversion failure on 'Визуализация сети выпускников ФСН
+## НИУ ВШЭ ' in 'mbcsToSbcs': dot substituted for <d1>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in title(...): conversion failure on 'Визуализация сети выпускников ФСН
+## НИУ ВШЭ ' in 'mbcsToSbcs': dot substituted for <8b>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in title(...): conversion failure on 'Визуализация сети выпускников ФСН
+## НИУ ВШЭ ' in 'mbcsToSbcs': dot substituted for <d0>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in title(...): conversion failure on 'Визуализация сети выпускников ФСН
+## НИУ ВШЭ ' in 'mbcsToSbcs': dot substituted for <bf>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in title(...): conversion failure on 'Визуализация сети выпускников ФСН
+## НИУ ВШЭ ' in 'mbcsToSbcs': dot substituted for <d1>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in title(...): conversion failure on 'Визуализация сети выпускников ФСН
+## НИУ ВШЭ ' in 'mbcsToSbcs': dot substituted for <83>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in title(...): conversion failure on 'Визуализация сети выпускников ФСН
+## НИУ ВШЭ ' in 'mbcsToSbcs': dot substituted for <d1>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in title(...): conversion failure on 'Визуализация сети выпускников ФСН
+## НИУ ВШЭ ' in 'mbcsToSbcs': dot substituted for <81>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in title(...): conversion failure on 'Визуализация сети выпускников ФСН
+## НИУ ВШЭ ' in 'mbcsToSbcs': dot substituted for <d0>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in title(...): conversion failure on 'Визуализация сети выпускников ФСН
+## НИУ ВШЭ ' in 'mbcsToSbcs': dot substituted for <ba>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in title(...): conversion failure on 'Визуализация сети выпускников ФСН
+## НИУ ВШЭ ' in 'mbcsToSbcs': dot substituted for <d0>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in title(...): conversion failure on 'Визуализация сети выпускников ФСН
+## НИУ ВШЭ ' in 'mbcsToSbcs': dot substituted for <bd>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in title(...): conversion failure on 'Визуализация сети выпускников ФСН
+## НИУ ВШЭ ' in 'mbcsToSbcs': dot substituted for <d0>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in title(...): conversion failure on 'Визуализация сети выпускников ФСН
+## НИУ ВШЭ ' in 'mbcsToSbcs': dot substituted for <b8>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in title(...): conversion failure on 'Визуализация сети выпускников ФСН
+## НИУ ВШЭ ' in 'mbcsToSbcs': dot substituted for <d0>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in title(...): conversion failure on 'Визуализация сети выпускников ФСН
+## НИУ ВШЭ ' in 'mbcsToSbcs': dot substituted for <ba>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in title(...): conversion failure on 'Визуализация сети выпускников ФСН
+## НИУ ВШЭ ' in 'mbcsToSbcs': dot substituted for <d0>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in title(...): conversion failure on 'Визуализация сети выпускников ФСН
+## НИУ ВШЭ ' in 'mbcsToSbcs': dot substituted for <be>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in title(...): conversion failure on 'Визуализация сети выпускников ФСН
+## НИУ ВШЭ ' in 'mbcsToSbcs': dot substituted for <d0>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in title(...): conversion failure on 'Визуализация сети выпускников ФСН
+## НИУ ВШЭ ' in 'mbcsToSbcs': dot substituted for <b2>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in title(...): conversion failure on 'Визуализация сети выпускников ФСН
+## НИУ ВШЭ ' in 'mbcsToSbcs': dot substituted for <d0>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in title(...): conversion failure on 'Визуализация сети выпускников ФСН
+## НИУ ВШЭ ' in 'mbcsToSbcs': dot substituted for <a4>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in title(...): conversion failure on 'Визуализация сети выпускников ФСН
+## НИУ ВШЭ ' in 'mbcsToSbcs': dot substituted for <d0>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in title(...): conversion failure on 'Визуализация сети выпускников ФСН
+## НИУ ВШЭ ' in 'mbcsToSbcs': dot substituted for <a1>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in title(...): conversion failure on 'Визуализация сети выпускников ФСН
+## НИУ ВШЭ ' in 'mbcsToSbcs': dot substituted for <d0>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in title(...): conversion failure on 'Визуализация сети выпускников ФСН
+## НИУ ВШЭ ' in 'mbcsToSbcs': dot substituted for <9d>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in title(...): conversion failure on 'Визуализация сети выпускников ФСН
+## НИУ ВШЭ ' in 'mbcsToSbcs': dot substituted for <d0>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in title(...): conversion failure on 'Визуализация сети выпускников ФСН
+## НИУ ВШЭ ' in 'mbcsToSbcs': dot substituted for <9d>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in title(...): conversion failure on 'Визуализация сети выпускников ФСН
+## НИУ ВШЭ ' in 'mbcsToSbcs': dot substituted for <d0>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in title(...): conversion failure on 'Визуализация сети выпускников ФСН
+## НИУ ВШЭ ' in 'mbcsToSbcs': dot substituted for <98>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in title(...): conversion failure on 'Визуализация сети выпускников ФСН
+## НИУ ВШЭ ' in 'mbcsToSbcs': dot substituted for <d0>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in title(...): conversion failure on 'Визуализация сети выпускников ФСН
+## НИУ ВШЭ ' in 'mbcsToSbcs': dot substituted for <a3>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in title(...): conversion failure on 'Визуализация сети выпускников ФСН
+## НИУ ВШЭ ' in 'mbcsToSbcs': dot substituted for <d0>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in title(...): conversion failure on 'Визуализация сети выпускников ФСН
+## НИУ ВШЭ ' in 'mbcsToSbcs': dot substituted for <92>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in title(...): conversion failure on 'Визуализация сети выпускников ФСН
+## НИУ ВШЭ ' in 'mbcsToSbcs': dot substituted for <d0>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in title(...): conversion failure on 'Визуализация сети выпускников ФСН
+## НИУ ВШЭ ' in 'mbcsToSbcs': dot substituted for <a8>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in title(...): conversion failure on 'Визуализация сети выпускников ФСН
+## НИУ ВШЭ ' in 'mbcsToSbcs': dot substituted for <d0>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in title(...): conversion failure on 'Визуализация сети выпускников ФСН
+## НИУ ВШЭ ' in 'mbcsToSbcs': dot substituted for <ad>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in title(...): conversion failure on ' и их научных руководителей' in
+## 'mbcsToSbcs': dot substituted for <d0>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in title(...): conversion failure on ' и их научных руководителей' in
+## 'mbcsToSbcs': dot substituted for <b8>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in title(...): conversion failure on ' и их научных руководителей' in
+## 'mbcsToSbcs': dot substituted for <d0>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in title(...): conversion failure on ' и их научных руководителей' in
+## 'mbcsToSbcs': dot substituted for <b8>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in title(...): conversion failure on ' и их научных руководителей' in
+## 'mbcsToSbcs': dot substituted for <d1>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in title(...): conversion failure on ' и их научных руководителей' in
+## 'mbcsToSbcs': dot substituted for <85>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in title(...): conversion failure on ' и их научных руководителей' in
+## 'mbcsToSbcs': dot substituted for <d0>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in title(...): conversion failure on ' и их научных руководителей' in
+## 'mbcsToSbcs': dot substituted for <bd>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in title(...): conversion failure on ' и их научных руководителей' in
+## 'mbcsToSbcs': dot substituted for <d0>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in title(...): conversion failure on ' и их научных руководителей' in
+## 'mbcsToSbcs': dot substituted for <b0>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in title(...): conversion failure on ' и их научных руководителей' in
+## 'mbcsToSbcs': dot substituted for <d1>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in title(...): conversion failure on ' и их научных руководителей' in
+## 'mbcsToSbcs': dot substituted for <83>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in title(...): conversion failure on ' и их научных руководителей' in
+## 'mbcsToSbcs': dot substituted for <d1>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in title(...): conversion failure on ' и их научных руководителей' in
+## 'mbcsToSbcs': dot substituted for <87>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in title(...): conversion failure on ' и их научных руководителей' in
+## 'mbcsToSbcs': dot substituted for <d0>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in title(...): conversion failure on ' и их научных руководителей' in
+## 'mbcsToSbcs': dot substituted for <bd>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in title(...): conversion failure on ' и их научных руководителей' in
+## 'mbcsToSbcs': dot substituted for <d1>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in title(...): conversion failure on ' и их научных руководителей' in
+## 'mbcsToSbcs': dot substituted for <8b>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in title(...): conversion failure on ' и их научных руководителей' in
+## 'mbcsToSbcs': dot substituted for <d1>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in title(...): conversion failure on ' и их научных руководителей' in
+## 'mbcsToSbcs': dot substituted for <85>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in title(...): conversion failure on ' и их научных руководителей' in
+## 'mbcsToSbcs': dot substituted for <d1>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in title(...): conversion failure on ' и их научных руководителей' in
+## 'mbcsToSbcs': dot substituted for <80>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in title(...): conversion failure on ' и их научных руководителей' in
+## 'mbcsToSbcs': dot substituted for <d1>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in title(...): conversion failure on ' и их научных руководителей' in
+## 'mbcsToSbcs': dot substituted for <83>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in title(...): conversion failure on ' и их научных руководителей' in
+## 'mbcsToSbcs': dot substituted for <d0>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in title(...): conversion failure on ' и их научных руководителей' in
+## 'mbcsToSbcs': dot substituted for <ba>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in title(...): conversion failure on ' и их научных руководителей' in
+## 'mbcsToSbcs': dot substituted for <d0>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in title(...): conversion failure on ' и их научных руководителей' in
+## 'mbcsToSbcs': dot substituted for <be>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in title(...): conversion failure on ' и их научных руководителей' in
+## 'mbcsToSbcs': dot substituted for <d0>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in title(...): conversion failure on ' и их научных руководителей' in
+## 'mbcsToSbcs': dot substituted for <b2>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in title(...): conversion failure on ' и их научных руководителей' in
+## 'mbcsToSbcs': dot substituted for <d0>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in title(...): conversion failure on ' и их научных руководителей' in
+## 'mbcsToSbcs': dot substituted for <be>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in title(...): conversion failure on ' и их научных руководителей' in
+## 'mbcsToSbcs': dot substituted for <d0>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in title(...): conversion failure on ' и их научных руководителей' in
+## 'mbcsToSbcs': dot substituted for <b4>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in title(...): conversion failure on ' и их научных руководителей' in
+## 'mbcsToSbcs': dot substituted for <d0>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in title(...): conversion failure on ' и их научных руководителей' in
+## 'mbcsToSbcs': dot substituted for <b8>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in title(...): conversion failure on ' и их научных руководителей' in
+## 'mbcsToSbcs': dot substituted for <d1>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in title(...): conversion failure on ' и их научных руководителей' in
+## 'mbcsToSbcs': dot substituted for <82>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in title(...): conversion failure on ' и их научных руководителей' in
+## 'mbcsToSbcs': dot substituted for <d0>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in title(...): conversion failure on ' и их научных руководителей' in
+## 'mbcsToSbcs': dot substituted for <b5>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in title(...): conversion failure on ' и их научных руководителей' in
+## 'mbcsToSbcs': dot substituted for <d0>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in title(...): conversion failure on ' и их научных руководителей' in
+## 'mbcsToSbcs': dot substituted for <bb>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in title(...): conversion failure on ' и их научных руководителей' in
+## 'mbcsToSbcs': dot substituted for <d0>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in title(...): conversion failure on ' и их научных руководителей' in
+## 'mbcsToSbcs': dot substituted for <b5>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in title(...): conversion failure on ' и их научных руководителей' in
+## 'mbcsToSbcs': dot substituted for <d0>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in title(...): conversion failure on ' и их научных руководителей' in
+## 'mbcsToSbcs': dot substituted for <b9>
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{legend}\NormalTok{(}\StringTok{"bottomleft"}\NormalTok{,}
+       \AttributeTok{legend =} \FunctionTok{c}\NormalTok{(}\StringTok{"Студенты"}\NormalTok{, }\StringTok{"Руководители"}\NormalTok{),}
+       \AttributeTok{fill =} \FunctionTok{c}\NormalTok{(}\StringTok{"lightblue"}\NormalTok{, }\StringTok{"lightgreen"}\NormalTok{)}
+\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Warning in (function (s, units = "user", cex = NULL, font = NULL, vfont =
+## NULL, : conversion failure on 'Студенты' in 'mbcsToSbcs': dot substituted for
+## <d0>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in (function (s, units = "user", cex = NULL, font = NULL, vfont =
+## NULL, : conversion failure on 'Студенты' in 'mbcsToSbcs': dot substituted for
+## <a1>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in (function (s, units = "user", cex = NULL, font = NULL, vfont =
+## NULL, : conversion failure on 'Студенты' in 'mbcsToSbcs': dot substituted for
+## <d1>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in (function (s, units = "user", cex = NULL, font = NULL, vfont =
+## NULL, : conversion failure on 'Студенты' in 'mbcsToSbcs': dot substituted for
+## <82>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in (function (s, units = "user", cex = NULL, font = NULL, vfont =
+## NULL, : conversion failure on 'Студенты' in 'mbcsToSbcs': dot substituted for
+## <d1>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in (function (s, units = "user", cex = NULL, font = NULL, vfont =
+## NULL, : conversion failure on 'Студенты' in 'mbcsToSbcs': dot substituted for
+## <83>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in (function (s, units = "user", cex = NULL, font = NULL, vfont =
+## NULL, : conversion failure on 'Студенты' in 'mbcsToSbcs': dot substituted for
+## <d0>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in (function (s, units = "user", cex = NULL, font = NULL, vfont =
+## NULL, : conversion failure on 'Студенты' in 'mbcsToSbcs': dot substituted for
+## <b4>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in (function (s, units = "user", cex = NULL, font = NULL, vfont =
+## NULL, : conversion failure on 'Студенты' in 'mbcsToSbcs': dot substituted for
+## <d0>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in (function (s, units = "user", cex = NULL, font = NULL, vfont =
+## NULL, : conversion failure on 'Студенты' in 'mbcsToSbcs': dot substituted for
+## <b5>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in (function (s, units = "user", cex = NULL, font = NULL, vfont =
+## NULL, : conversion failure on 'Студенты' in 'mbcsToSbcs': dot substituted for
+## <d0>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in (function (s, units = "user", cex = NULL, font = NULL, vfont =
+## NULL, : conversion failure on 'Студенты' in 'mbcsToSbcs': dot substituted for
+## <bd>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in (function (s, units = "user", cex = NULL, font = NULL, vfont =
+## NULL, : conversion failure on 'Студенты' in 'mbcsToSbcs': dot substituted for
+## <d1>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in (function (s, units = "user", cex = NULL, font = NULL, vfont =
+## NULL, : conversion failure on 'Студенты' in 'mbcsToSbcs': dot substituted for
+## <82>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in (function (s, units = "user", cex = NULL, font = NULL, vfont =
+## NULL, : conversion failure on 'Студенты' in 'mbcsToSbcs': dot substituted for
+## <d1>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in (function (s, units = "user", cex = NULL, font = NULL, vfont =
+## NULL, : conversion failure on 'Студенты' in 'mbcsToSbcs': dot substituted for
+## <8b>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in (function (s, units = "user", cex = NULL, font = NULL, vfont =
+## NULL, : conversion failure on 'Руководители' in 'mbcsToSbcs': dot substituted
+## for <d0>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in (function (s, units = "user", cex = NULL, font = NULL, vfont =
+## NULL, : conversion failure on 'Руководители' in 'mbcsToSbcs': dot substituted
+## for <a0>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in (function (s, units = "user", cex = NULL, font = NULL, vfont =
+## NULL, : conversion failure on 'Руководители' in 'mbcsToSbcs': dot substituted
+## for <d1>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in (function (s, units = "user", cex = NULL, font = NULL, vfont =
+## NULL, : conversion failure on 'Руководители' in 'mbcsToSbcs': dot substituted
+## for <83>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in (function (s, units = "user", cex = NULL, font = NULL, vfont =
+## NULL, : conversion failure on 'Руководители' in 'mbcsToSbcs': dot substituted
+## for <d0>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in (function (s, units = "user", cex = NULL, font = NULL, vfont =
+## NULL, : conversion failure on 'Руководители' in 'mbcsToSbcs': dot substituted
+## for <ba>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in (function (s, units = "user", cex = NULL, font = NULL, vfont =
+## NULL, : conversion failure on 'Руководители' in 'mbcsToSbcs': dot substituted
+## for <d0>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in (function (s, units = "user", cex = NULL, font = NULL, vfont =
+## NULL, : conversion failure on 'Руководители' in 'mbcsToSbcs': dot substituted
+## for <be>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in (function (s, units = "user", cex = NULL, font = NULL, vfont =
+## NULL, : conversion failure on 'Руководители' in 'mbcsToSbcs': dot substituted
+## for <d0>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in (function (s, units = "user", cex = NULL, font = NULL, vfont =
+## NULL, : conversion failure on 'Руководители' in 'mbcsToSbcs': dot substituted
+## for <b2>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in (function (s, units = "user", cex = NULL, font = NULL, vfont =
+## NULL, : conversion failure on 'Руководители' in 'mbcsToSbcs': dot substituted
+## for <d0>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in (function (s, units = "user", cex = NULL, font = NULL, vfont =
+## NULL, : conversion failure on 'Руководители' in 'mbcsToSbcs': dot substituted
+## for <be>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in (function (s, units = "user", cex = NULL, font = NULL, vfont =
+## NULL, : conversion failure on 'Руководители' in 'mbcsToSbcs': dot substituted
+## for <d0>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in (function (s, units = "user", cex = NULL, font = NULL, vfont =
+## NULL, : conversion failure on 'Руководители' in 'mbcsToSbcs': dot substituted
+## for <b4>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in (function (s, units = "user", cex = NULL, font = NULL, vfont =
+## NULL, : conversion failure on 'Руководители' in 'mbcsToSbcs': dot substituted
+## for <d0>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in (function (s, units = "user", cex = NULL, font = NULL, vfont =
+## NULL, : conversion failure on 'Руководители' in 'mbcsToSbcs': dot substituted
+## for <b8>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in (function (s, units = "user", cex = NULL, font = NULL, vfont =
+## NULL, : conversion failure on 'Руководители' in 'mbcsToSbcs': dot substituted
+## for <d1>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in (function (s, units = "user", cex = NULL, font = NULL, vfont =
+## NULL, : conversion failure on 'Руководители' in 'mbcsToSbcs': dot substituted
+## for <82>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in (function (s, units = "user", cex = NULL, font = NULL, vfont =
+## NULL, : conversion failure on 'Руководители' in 'mbcsToSbcs': dot substituted
+## for <d0>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in (function (s, units = "user", cex = NULL, font = NULL, vfont =
+## NULL, : conversion failure on 'Руководители' in 'mbcsToSbcs': dot substituted
+## for <b5>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in (function (s, units = "user", cex = NULL, font = NULL, vfont =
+## NULL, : conversion failure on 'Руководители' in 'mbcsToSbcs': dot substituted
+## for <d0>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in (function (s, units = "user", cex = NULL, font = NULL, vfont =
+## NULL, : conversion failure on 'Руководители' in 'mbcsToSbcs': dot substituted
+## for <bb>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in (function (s, units = "user", cex = NULL, font = NULL, vfont =
+## NULL, : conversion failure on 'Руководители' in 'mbcsToSbcs': dot substituted
+## for <d0>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in (function (s, units = "user", cex = NULL, font = NULL, vfont =
+## NULL, : conversion failure on 'Руководители' in 'mbcsToSbcs': dot substituted
+## for <b8>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in text.default(x, y, ...): conversion failure on 'Студенты' in
+## 'mbcsToSbcs': dot substituted for <d0>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in text.default(x, y, ...): conversion failure on 'Студенты' in
+## 'mbcsToSbcs': dot substituted for <a1>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in text.default(x, y, ...): conversion failure on 'Студенты' in
+## 'mbcsToSbcs': dot substituted for <d1>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in text.default(x, y, ...): conversion failure on 'Студенты' in
+## 'mbcsToSbcs': dot substituted for <82>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in text.default(x, y, ...): conversion failure on 'Студенты' in
+## 'mbcsToSbcs': dot substituted for <d1>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in text.default(x, y, ...): conversion failure on 'Студенты' in
+## 'mbcsToSbcs': dot substituted for <83>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in text.default(x, y, ...): conversion failure on 'Студенты' in
+## 'mbcsToSbcs': dot substituted for <d0>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in text.default(x, y, ...): conversion failure on 'Студенты' in
+## 'mbcsToSbcs': dot substituted for <b4>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in text.default(x, y, ...): conversion failure on 'Студенты' in
+## 'mbcsToSbcs': dot substituted for <d0>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in text.default(x, y, ...): conversion failure on 'Студенты' in
+## 'mbcsToSbcs': dot substituted for <b5>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in text.default(x, y, ...): conversion failure on 'Студенты' in
+## 'mbcsToSbcs': dot substituted for <d0>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in text.default(x, y, ...): conversion failure on 'Студенты' in
+## 'mbcsToSbcs': dot substituted for <bd>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in text.default(x, y, ...): conversion failure on 'Студенты' in
+## 'mbcsToSbcs': dot substituted for <d1>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in text.default(x, y, ...): conversion failure on 'Студенты' in
+## 'mbcsToSbcs': dot substituted for <82>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in text.default(x, y, ...): conversion failure on 'Студенты' in
+## 'mbcsToSbcs': dot substituted for <d1>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in text.default(x, y, ...): conversion failure on 'Студенты' in
+## 'mbcsToSbcs': dot substituted for <8b>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in text.default(x, y, ...): conversion failure on 'Руководители' in
+## 'mbcsToSbcs': dot substituted for <d0>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in text.default(x, y, ...): conversion failure on 'Руководители' in
+## 'mbcsToSbcs': dot substituted for <a0>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in text.default(x, y, ...): conversion failure on 'Руководители' in
+## 'mbcsToSbcs': dot substituted for <d1>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in text.default(x, y, ...): conversion failure on 'Руководители' in
+## 'mbcsToSbcs': dot substituted for <83>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in text.default(x, y, ...): conversion failure on 'Руководители' in
+## 'mbcsToSbcs': dot substituted for <d0>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in text.default(x, y, ...): conversion failure on 'Руководители' in
+## 'mbcsToSbcs': dot substituted for <ba>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in text.default(x, y, ...): conversion failure on 'Руководители' in
+## 'mbcsToSbcs': dot substituted for <d0>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in text.default(x, y, ...): conversion failure on 'Руководители' in
+## 'mbcsToSbcs': dot substituted for <be>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in text.default(x, y, ...): conversion failure on 'Руководители' in
+## 'mbcsToSbcs': dot substituted for <d0>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in text.default(x, y, ...): conversion failure on 'Руководители' in
+## 'mbcsToSbcs': dot substituted for <b2>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in text.default(x, y, ...): conversion failure on 'Руководители' in
+## 'mbcsToSbcs': dot substituted for <d0>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in text.default(x, y, ...): conversion failure on 'Руководители' in
+## 'mbcsToSbcs': dot substituted for <be>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in text.default(x, y, ...): conversion failure on 'Руководители' in
+## 'mbcsToSbcs': dot substituted for <d0>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in text.default(x, y, ...): conversion failure on 'Руководители' in
+## 'mbcsToSbcs': dot substituted for <b4>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in text.default(x, y, ...): conversion failure on 'Руководители' in
+## 'mbcsToSbcs': dot substituted for <d0>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in text.default(x, y, ...): conversion failure on 'Руководители' in
+## 'mbcsToSbcs': dot substituted for <b8>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in text.default(x, y, ...): conversion failure on 'Руководители' in
+## 'mbcsToSbcs': dot substituted for <d1>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in text.default(x, y, ...): conversion failure on 'Руководители' in
+## 'mbcsToSbcs': dot substituted for <82>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in text.default(x, y, ...): conversion failure on 'Руководители' in
+## 'mbcsToSbcs': dot substituted for <d0>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in text.default(x, y, ...): conversion failure on 'Руководители' in
+## 'mbcsToSbcs': dot substituted for <b5>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in text.default(x, y, ...): conversion failure on 'Руководители' in
+## 'mbcsToSbcs': dot substituted for <d0>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in text.default(x, y, ...): conversion failure on 'Руководители' in
+## 'mbcsToSbcs': dot substituted for <bb>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in text.default(x, y, ...): conversion failure on 'Руководители' in
+## 'mbcsToSbcs': dot substituted for <d0>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in text.default(x, y, ...): conversion failure on 'Руководители' in
+## 'mbcsToSbcs': dot substituted for <b8>
+\end{verbatim}
+
+\includegraphics{SNA_FINAL_files/figure-latex/unnamed-chunk-1-1.pdf}
+
+\hypertarget{basic-measures-network-statistics}{%
+\subsection{3. Basic Measures: Network
+Statistics}\label{basic-measures-network-statistics}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Расчет плотности сети}
+\NormalTok{network\_density }\OtherTok{\textless{}{-}} \FunctionTok{edge\_density}\NormalTok{(g)}
+
+\CommentTok{\# Расчет средней длины пути}
+\NormalTok{avg\_path\_length }\OtherTok{\textless{}{-}} \FunctionTok{mean\_distance}\NormalTok{(g, }\AttributeTok{directed =} \ConstantTok{TRUE}\NormalTok{)}
+
+\FunctionTok{cat}\NormalTok{(}\StringTok{"Плотность сети:"}\NormalTok{, network\_density, }\StringTok{"}\SpecialCharTok{\textbackslash{}n}\StringTok{"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Плотность сети: 0.00177895
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{cat}\NormalTok{(}\StringTok{"Средняя длина пути:"}\NormalTok{, avg\_path\_length, }\StringTok{"}\SpecialCharTok{\textbackslash{}n}\StringTok{"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Средняя длина пути: 8.532319
+\end{verbatim}
+
+\hypertarget{ux438ux43dux442ux435ux440ux43fux440ux435ux442ux430ux446ux438ux44f-ux440ux435ux437ux443ux43bux44cux442ux430ux442ux43eux432}{%
+\subsubsection{Интерпретация
+результатов:}\label{ux438ux43dux442ux435ux440ux43fux440ux435ux442ux430ux446ux438ux44f-ux440ux435ux437ux443ux43bux44cux442ux430ux442ux43eux432}}
+
+Плотность сети равна 0.00177895, что является довольно низким значением.
+Это означает, что в вашей сети очень мало рёбер по сравнению с
+максимально возможным количеством рёбер. В контексте сети научных
+руководителей и студентов это может означать, что большинство научных
+руководителей работают с одним или несколькими студентами.
+
+Средняя длина пути в сети равна 8.532319. Это относительно большое
+значение, указывающее на то, что, в среднем, для перехода от одного узла
+сети к другому требуется много шагов. Это может быть связано с тем, что
+в сети много изолированных подгрупп или что существует несколько
+центральных узлов, через которые проходят большинство путей.
+
+\hypertarget{ux43cux435ux440ux44b-ux446ux435ux43dux442ux440ux430ux43bux44cux43dux43eux441ux442ux438}{%
+\subsection{4. Меры
+центральности}\label{ux43cux435ux440ux44b-ux446ux435ux43dux442ux440ux430ux43bux44cux43dux43eux441ux442ux438}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(igraph)}
+
+\NormalTok{in\_degree\_centrality }\OtherTok{\textless{}{-}}\NormalTok{ igraph}\SpecialCharTok{::}\FunctionTok{degree}\NormalTok{(g, }\AttributeTok{mode =} \StringTok{"in"}\NormalTok{)}
+\NormalTok{out\_degree\_centrality }\OtherTok{\textless{}{-}}\NormalTok{ igraph}\SpecialCharTok{::}\FunctionTok{degree}\NormalTok{(g, }\AttributeTok{mode =} \StringTok{"out"}\NormalTok{)}
+
+\NormalTok{in\_closeness\_centrality }\OtherTok{\textless{}{-}}\NormalTok{ igraph}\SpecialCharTok{::}\FunctionTok{closeness}\NormalTok{(g, }\AttributeTok{mode =} \StringTok{"in"}\NormalTok{)}
+\NormalTok{out\_closeness\_centrality }\OtherTok{\textless{}{-}}\NormalTok{ igraph}\SpecialCharTok{::}\FunctionTok{closeness}\NormalTok{(g, }\AttributeTok{mode =} \StringTok{"out"}\NormalTok{)}
+\NormalTok{betweenness\_centrality }\OtherTok{\textless{}{-}}\NormalTok{ igraph}\SpecialCharTok{::}\FunctionTok{betweenness}\NormalTok{(g)}
+
+\FunctionTok{V}\NormalTok{(g)}\SpecialCharTok{$}\NormalTok{in\_degree\_centrality }\OtherTok{\textless{}{-}}\NormalTok{ in\_degree\_centrality}
+\FunctionTok{V}\NormalTok{(g)}\SpecialCharTok{$}\NormalTok{out\_degree\_centrality }\OtherTok{\textless{}{-}}\NormalTok{ out\_degree\_centrality}
+\FunctionTok{V}\NormalTok{(g)}\SpecialCharTok{$}\NormalTok{in\_closeness\_centrality }\OtherTok{\textless{}{-}}\NormalTok{ in\_closeness\_centrality}
+\FunctionTok{V}\NormalTok{(g)}\SpecialCharTok{$}\NormalTok{out\_closeness\_centrality }\OtherTok{\textless{}{-}}\NormalTok{ out\_closeness\_centrality}
+\FunctionTok{V}\NormalTok{(g)}\SpecialCharTok{$}\NormalTok{betweenness\_centrality }\OtherTok{\textless{}{-}}\NormalTok{ betweenness\_centrality}
+
+\FunctionTok{cat}\NormalTok{(}\StringTok{"In{-}Degree Centrality:"}\NormalTok{, in\_degree\_centrality, }\StringTok{"}\SpecialCharTok{\textbackslash{}n}\StringTok{"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## In-Degree Centrality: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 11 2 1 2 3 3 1 5 2 14 2 3 1 3 3 3 4 17 2 2 1 1 2 2 9 1 2 2 3 1 1 1 1 3 2 1 3 1 2 9 3 1 2 1 3 2 2 3 3 1 2 1 1 1 1 1 2 1 2 1 1 2 1 1 1 2 2 1 2 1 1 1 1 3 1 2 1 4 1 6 2 2 2 4 1 2 1 1 2 2 1 1 1 2 2 1 1 1 1 3 1 1 4 1 1 1 1 1 1 1 2 1 1 1 1 2 1 1 1 1 1 1 1
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{cat}\NormalTok{(}\StringTok{"Out{-}Degree Centrality:"}\NormalTok{, out\_degree\_centrality, }\StringTok{"}\SpecialCharTok{\textbackslash{}n}\StringTok{"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Out-Degree Centrality: 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 3 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{cat}\NormalTok{(}\StringTok{"In{-}Closeness Centrality:"}\NormalTok{, in\_closeness\_centrality, }\StringTok{"}\SpecialCharTok{\textbackslash{}n}\StringTok{"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## In-Closeness Centrality: NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN 0.1428571 0.01052632 0.05 0.1428571 0.06666667 0.04545455 0.04166667 0.1111111 0.02272727 0.06666667 0.008064516 0.07142857 0.03571429 0.1428571 0.04347826 0.04166667 0.03448276 0.02941176 0.00617284 0.0625 0.0625 0.1428571 0.1111111 0.05882353 0.05882353 0.01190476 0.1111111 0.05555556 0.0625 0.03846154 0.1111111 0.125 0.1111111 0.125 0.03703704 0.0625 0.1 0.03333333 0.125 0.07142857 0.01176471 0.03703704 0.1111111 0.06666667 0.125 0.04166667 0.06666667 0.0625 0.04 0.04 0.1428571 0.0625 0.125 0.125 0.1111111 0.1428571 0.1428571 0.05263158 0.1428571 0.0625 0.1428571 0.1111111 0.05263158 0.125 0.1428571 0.125 0.06666667 0.06666667 0.125 0.0625 0.125 0.125 0.1428571 0.1111111 0.03571429 0.1428571 0.05882353 0.1 0.02631579 0.1111111 0.02040816 0.05 0.05882353 0.0625 0.03333333 0.125 0.05882353 0.1428571 0.125 0.06666667 0.05882353 0.1111111 0.1 0.1111111 0.0625 0.0625 0.125 0.125 0.1111111 0.1428571 0.03448276 0.125 0.1111111 0.02777778 0.1428571 0.1 0.1428571 0.1111111 0.1428571 0.1428571 0.1111111 0.05882353 0.125 0.1111111 0.1 0.1111111 0.05882353 0.1111111 0.1428571 0.1111111 0.125 0.125 0.1111111 0.1428571
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{cat}\NormalTok{(}\StringTok{"Out{-}Closeness Centrality:"}\NormalTok{, out\_closeness\_centrality, }\StringTok{"}\SpecialCharTok{\textbackslash{}n}\StringTok{"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Out-Closeness Centrality: 0.1428571 0.125 0.1 0.1428571 0.1428571 0.1428571 0.1111111 0.1111111 0.125 0.125 0.1 0.1428571 0.1 0.1428571 0.1428571 0.1428571 0.1111111 0.1 0.1111111 0.1111111 0.1111111 0.1428571 0.1111111 0.1111111 0.125 0.04545455 0.1111111 0.1 0.1 0.1111111 0.1111111 0.1111111 0.1111111 0.1111111 0.125 0.1 0.1 0.1111111 0.125 0.1111111 0.125 0.125 0.1111111 0.125 0.1111111 0.1 0.1 0.125 0.1 0.1 0.125 0.1428571 0.1428571 0.1 0.1111111 0.1428571 0.1111111 0.125 0.125 0.125 0.125 0.1 0.1111111 0.1 0.1111111 0.125 0.1428571 0.125 0.125 0.1428571 0.125 0.125 0.125 0.1428571 0.1111111 0.1428571 0.1428571 0.1 0.1428571 0.1428571 0.125 0.1428571 0.125 0.1 0.125 0.125 0.1428571 0.1111111 0.1111111 0.1 0.125 0.1428571 0.125 0.125 0.125 0.125 0.125 0.1111111 0.1111111 0.125 0.1428571 0.125 0.1 0.125 0.125 0.1 0.125 0.1428571 0.1111111 0.1111111 0.1428571 0.1111111 0.1 0.1 0.1 0.1111111 0.125 0.1 0.125 0.1428571 0.125 0.125 0.125 0.125 0.1111111 0.1428571 0.125 0.125 0.1111111 0.125 0.125 0.1111111 0.1 0.1111111 0.1111111 0.125 0.1 0.1428571 0.1 0.1111111 0.125 0.1111111 0.1428571 0.1 0.125 0.1111111 0.1 0.125 0.125 0.1 0.125 0.1111111 0.125 0.1111111 0.1 0.125 0.1428571 0.1 0.1111111 0.1 0.1111111 0.1 0.125 0.1111111 0.125 0.125 0.125 0.1111111 0.1111111 0.1428571 0.1 0.1 0.1428571 0.1111111 0.125 0.1428571 0.1111111 0.1 0.1428571 0.1 0.1111111 0.1111111 0.1428571 0.1 0.125 0.1 0.125 0.125 0.1 0.1 0.1 0.125 0.125 0.1 0.125 0.1111111 0.1111111 0.125 0.1 0.1111111 0.1 0.1111111 0.1111111 0.125 0.125 0.125 0.1111111 0.1111111 0.1111111 0.1428571 0.1 0.1428571 0.1 0.1 0.1111111 0.1 0.1111111 0.125 0.1 0.125 0.1428571 0.1111111 0.125 0.125 0.1428571 0.1111111 0.1111111 0.125 0.1428571 0.1111111 0.125 0.1428571 0.1111111 0.125 0.125 0.125 0.125 0.1111111 0.1 0.1428571 0.1428571 0.1 0.125 0.1 0.1 0.1 0.1428571 0.1111111 0.1428571 0.125 0.1 0.1111111 0.125 0.125 0.125 0.1111111 0.1111111 0.125 0.1 0.1 0.1428571 NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{cat}\NormalTok{(}\StringTok{"Betweenness Centrality:"}\NormalTok{, betweenness\_centrality, }\StringTok{"}\SpecialCharTok{\textbackslash{}n}\StringTok{"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Betweenness Centrality: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+\end{verbatim}
+
+Первым делом стоит обратить внимание на то, что многие узлы изолированы
+и поэтому имеют центральность 0.
+
+\hypertarget{ux438ux43dux442ux435ux440ux43fux440ux435ux442ux430ux446ux438ux44f-ux440ux435ux437ux443ux43bux44cux442ux430ux442ux43eux432-1}{%
+\subsubsection{Интерпретация
+результатов:}\label{ux438ux43dux442ux435ux440ux43fux440ux435ux442ux430ux446ux438ux44f-ux440ux435ux437ux443ux43bux44cux442ux430ux442ux43eux432-1}}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  \textbf{In-Degree Centrality}: Большинство узлов по это центральности
+  имеют 0, что говорит об отсутствии у них связей от других узлов, при
+  этом в сети есть несколько узлов с высоким значением этой
+  центральности, что может указывать на наличие авторитетных узлов в
+  сети.
+\item
+  \textbf{Out-Degree Centrality}: Большинство узлов по это центральности
+  имеют 1, в то время как некоторые узлы не имеют исходящих связей
+  (центральность равна 0). Это может указывать на то, что большинство
+  узлов в сети активны в установлении связей с другими узлами, но в то
+  же время есть узлы, которые полностью изолированы.
+\item
+  \textbf{In-Closeness Centrality}: Большинство узлов имеют очень низкое
+  значение по этой центральности, что может означать, что эти узлы
+  далеко расположены от других узлов в сети по числу шагов. Некоторые
+  узлы имеют значение NaN, что может быть результатом того, что эти узлы
+  полностью изолированы.
+\item
+  \textbf{Out-Closeness Centrality}: Результаты аналогичны In-Closeness
+  Centrality, с тем исключением, что они относятся к исходящим связям.
+\item
+  \textbf{Betweenness Centrality}: Почти все узлы имеют степень
+  посредничества равную 0, что говорит о том, что большинство узлов не
+  действуют как ``мосты'' между другими узлами в сети. Это может быть
+  признаком того, что сеть либо очень разрежена, либо состоит из
+  нескольких изолированных подгрупп.
+\end{enumerate}
+
+Таким образом, можно предположить, что сеть состоит из нескольких очень
+активных узлов (или ``авторитетов''), в то время как большинство узлов
+либо изолированы, либо имеют очень низкую степень связности.
+
+\hypertarget{dyadic-triadic-analysis}{%
+\subsection{5. Dyadic \& Triadic
+Analysis}\label{dyadic-triadic-analysis}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{dyads }\OtherTok{\textless{}{-}} \FunctionTok{t}\NormalTok{(}\FunctionTok{combn}\NormalTok{(}\FunctionTok{V}\NormalTok{(g), }\DecValTok{2}\NormalTok{))}
+
+\NormalTok{mutual\_count }\OtherTok{\textless{}{-}} \DecValTok{0}
+\NormalTok{asymmetric\_count }\OtherTok{\textless{}{-}} \DecValTok{0}
+\NormalTok{null\_count }\OtherTok{\textless{}{-}} \DecValTok{0}
+
+\ControlFlowTok{for}\NormalTok{ (i }\ControlFlowTok{in} \DecValTok{1}\SpecialCharTok{:}\FunctionTok{nrow}\NormalTok{(dyads)) \{}
+\NormalTok{  node1 }\OtherTok{\textless{}{-}}\NormalTok{ dyads[i, }\DecValTok{1}\NormalTok{]}
+\NormalTok{  node2 }\OtherTok{\textless{}{-}}\NormalTok{ dyads[i, }\DecValTok{2}\NormalTok{]}
+  
+\NormalTok{  edge1 }\OtherTok{\textless{}{-}} \FunctionTok{get.edge.ids}\NormalTok{(g, }\FunctionTok{c}\NormalTok{(node1, node2), }\AttributeTok{directed =} \ConstantTok{TRUE}\NormalTok{)}
+\NormalTok{  edge2 }\OtherTok{\textless{}{-}} \FunctionTok{get.edge.ids}\NormalTok{(g, }\FunctionTok{c}\NormalTok{(node2, node1), }\AttributeTok{directed =} \ConstantTok{TRUE}\NormalTok{)}
+  
+  \ControlFlowTok{if}\NormalTok{ (}\FunctionTok{length}\NormalTok{(edge1) }\SpecialCharTok{\textgreater{}} \DecValTok{0} \SpecialCharTok{\&} \FunctionTok{length}\NormalTok{(edge2) }\SpecialCharTok{\textgreater{}} \DecValTok{0}\NormalTok{) \{}
+\NormalTok{    mutual\_count }\OtherTok{\textless{}{-}}\NormalTok{ mutual\_count }\SpecialCharTok{+} \DecValTok{1}
+\NormalTok{  \} }\ControlFlowTok{else} \ControlFlowTok{if}\NormalTok{ (}\FunctionTok{length}\NormalTok{(edge1) }\SpecialCharTok{\textgreater{}} \DecValTok{0} \SpecialCharTok{|} \FunctionTok{length}\NormalTok{(edge2) }\SpecialCharTok{\textgreater{}} \DecValTok{0}\NormalTok{) \{}
+\NormalTok{    asymmetric\_count }\OtherTok{\textless{}{-}}\NormalTok{ asymmetric\_count }\SpecialCharTok{+} \DecValTok{1}
+\NormalTok{  \} }\ControlFlowTok{else}\NormalTok{ \{}
+\NormalTok{    null\_count }\OtherTok{\textless{}{-}}\NormalTok{ null\_count }\SpecialCharTok{+} \DecValTok{1}
+\NormalTok{  \}}
+\NormalTok{\}}
+
+\FunctionTok{cat}\NormalTok{(}\StringTok{"Mutual dyads:"}\NormalTok{, mutual\_count, }\StringTok{"}\SpecialCharTok{\textbackslash{}n}\StringTok{"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Mutual dyads: 73920
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{cat}\NormalTok{(}\StringTok{"Asymmetric dyads:"}\NormalTok{, asymmetric\_count, }\StringTok{"}\SpecialCharTok{\textbackslash{}n}\StringTok{"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Asymmetric dyads: 0
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{cat}\NormalTok{(}\StringTok{"Null dyads:"}\NormalTok{, null\_count, }\StringTok{"}\SpecialCharTok{\textbackslash{}n}\StringTok{"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Null dyads: 0
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{adj\_matrix }\OtherTok{\textless{}{-}} \FunctionTok{as.matrix}\NormalTok{(igraph}\SpecialCharTok{::}\FunctionTok{as\_adjacency\_matrix}\NormalTok{(g))}
+\NormalTok{triads }\OtherTok{\textless{}{-}}\NormalTok{ sna}\SpecialCharTok{::}\FunctionTok{triad.census}\NormalTok{(adj\_matrix)}
+\FunctionTok{print}\NormalTok{(triads)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##          003   012 102 021D 021U 021C 111D 111U 030T 030C 201 120D 120U 120C
+## [1,] 9336875 99761   0    3  481    0    0    0    0    0   0    0    0    0
+##      210 300
+## [1,]   0   0
+\end{verbatim}
+
+\hypertarget{ux438ux43dux442ux435ux440ux43fux440ux435ux442ux430ux446ux438ux44f-ux440ux435ux437ux443ux43bux44cux442ux430ux442ux43eux432-2}{%
+\subsubsection{Интерпретация
+результатов:}\label{ux438ux43dux442ux435ux440ux43fux440ux435ux442ux430ux446ux438ux44f-ux440ux435ux437ux443ux43bux44cux442ux430ux442ux43eux432-2}}
+
+Как и ожидалось, все диады в сети является взаимными, что обусловленно
+структурой данных. Анализ триад дал следующие результаты:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  Изолированные триады (9336875): Это число представляет собой
+  количество триад, где нет связей между узлами. В контексте наших
+  данных, это логично и ожидаемо, так как все работы писались
+  индивидуально.
+\item
+  Односторонние триады (99761): Это ситуации, где один участник связан с
+  другим, но отсутствует обратная связь, и третий участник остается
+  изолированным. В контексте наших данных, это также логично и ожидаемо,
+  так как все работы писались индивидуально.
+\item
+  Триады типа 021D (3) и 021U (481): 021D может представлять собой
+  ситуацию, где один научный руководитель работает с двумя студентами, в
+  то время как 030T может представлять собой ситуацию, где трое
+  студентов работают с одним и тем же научным руководителем.
+\end{enumerate}
+
+\hypertarget{ideas-about-the-strenght-of-a-weak-ties-and-structural-holes-in-your}{%
+\subsection{6. Ideas about the Strenght of a Weak Ties and Structural
+Holes (in
+your}\label{ideas-about-the-strenght-of-a-weak-ties-and-structural-holes-in-your}}
+
+network)
+
+В рамках данной сети слабые связи могут оказаться важными для научных
+руководителей, так как они позволяют им расширять область своих научных
+интересов засчет помощи студентам в рамках написаниями ими ВКР. В
+текущей структуре сети существует много структурных дыр, это может
+являться и препятствиям, и возможностью. С одной стороны, это может
+затруднять быстрый обмен информацией и ресурсами, с другой стороны, это
+предоставляет возможности для инноваций и творческого обмена, поскольку
+идеи не застревают в ``эхо-камерах'' тесно связанных групп.
+
+\hypertarget{ux43fux440ux43eux432ux435ux440ux43aux430-ux433ux438ux43fux43eux442ux435ux437}{%
+\subsection{7. Проверка
+гипотез}\label{ux43fux440ux43eux432ux435ux440ux43aux430-ux433ux438ux43fux43eux442ux435ux437}}
+
+\textbf{H1}: Студенты, научные руководители которых имеют высокую
+степень центральности в сети, склонны получать более высокие оценки за
+свои дипломные работы.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{from\_vertices }\OtherTok{\textless{}{-}}\NormalTok{ igraph}\SpecialCharTok{::}\FunctionTok{tail\_of}\NormalTok{(g, }\FunctionTok{E}\NormalTok{(g))}
+\NormalTok{to\_vertices }\OtherTok{\textless{}{-}}\NormalTok{ igraph}\SpecialCharTok{::}\FunctionTok{head\_of}\NormalTok{(g, }\FunctionTok{E}\NormalTok{(g))}
+
+\NormalTok{data }\OtherTok{\textless{}{-}} \FunctionTok{data.frame}\NormalTok{(}
+  \AttributeTok{grades =} \FunctionTok{E}\NormalTok{(g)}\SpecialCharTok{$}\NormalTok{grades,}
+  \AttributeTok{from\_centrality =} \FunctionTok{V}\NormalTok{(g)}\SpecialCharTok{$}\NormalTok{in\_degree\_centrality[from\_vertices],}
+  \AttributeTok{to\_centrality =} \FunctionTok{V}\NormalTok{(g)}\SpecialCharTok{$}\NormalTok{in\_degree\_centrality[to\_vertices]}
+\NormalTok{)}
+
+\NormalTok{model1 }\OtherTok{\textless{}{-}} \FunctionTok{lm}\NormalTok{(grades }\SpecialCharTok{\textasciitilde{}}\NormalTok{ to\_centrality, }\AttributeTok{data =}\NormalTok{ data)}
+\FunctionTok{summary}\NormalTok{(model1)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+## Call:
+## lm(formula = grades ~ to_centrality, data = data)
+## 
+## Residuals:
+##     Min      1Q  Median      3Q     Max 
+## -2.4591 -0.7458 -0.2576  0.7424  1.7424 
+## 
+## Coefficients:
+##               Estimate Std. Error t value Pr(>|t|)    
+## (Intercept)    8.18255    0.08325  98.291  < 2e-16 ***
+## to_centrality  0.07509    0.01244   6.036 5.39e-09 ***
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+## 
+## Residual standard error: 0.9693 on 261 degrees of freedom
+## Multiple R-squared:  0.1225, Adjusted R-squared:  0.1191 
+## F-statistic: 36.44 on 1 and 261 DF,  p-value: 5.392e-09
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{length}\NormalTok{(}\FunctionTok{unique}\NormalTok{(data}\SpecialCharTok{$}\NormalTok{to\_centrality))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 10
+\end{verbatim}
+
+\hypertarget{ux438ux43dux442ux435ux440ux43fux440ux435ux442ux430ux446ux438ux44f-ux440ux435ux437ux443ux43bux44cux442ux430ux442ux43eux432-3}{%
+\subsubsection{Интерпретация
+результатов:}\label{ux438ux43dux442ux435ux440ux43fux440ux435ux442ux430ux446ux438ux44f-ux440ux435ux437ux443ux43bux44cux442ux430ux442ux43eux432-3}}
+
+Существует положительная статистически значимая взаимосвязь между
+центральностью научных руководителей и оценками дипломных работ, но
+модель объясняет примерно 12\% вариации в оценках. Несмотря на
+статистическую значимость, влияние центральности на оценки не очень
+велико, так как коэффициент при to\_centrality довольно мал. Учитывая,
+что уникальных значений центральности всего 10, это может указывать на
+наличие определенных групп руководителей с различным уровнем влияния на
+оценки. Гипотеза подтверждается.
+
+\textbf{H2}: Руководители с высокой межпосреднической центральностью
+оказывают более широкое влияние на итоговую оценку студентов, что
+потенциально может привести к более разнообразным оценкам за диплом.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{from\_vertices }\OtherTok{\textless{}{-}}\NormalTok{ igraph}\SpecialCharTok{::}\FunctionTok{tail\_of}\NormalTok{(g, }\FunctionTok{E}\NormalTok{(g))}
+\NormalTok{to\_vertices }\OtherTok{\textless{}{-}}\NormalTok{ igraph}\SpecialCharTok{::}\FunctionTok{head\_of}\NormalTok{(g, }\FunctionTok{E}\NormalTok{(g))}
+
+\NormalTok{data }\OtherTok{\textless{}{-}} \FunctionTok{data.frame}\NormalTok{(}
+  \AttributeTok{grades =} \FunctionTok{E}\NormalTok{(g)}\SpecialCharTok{$}\NormalTok{grades,}
+  \AttributeTok{betweenness\_centrality =} \FunctionTok{V}\NormalTok{(g)}\SpecialCharTok{$}\NormalTok{betweenness\_centrality[from\_vertices]}
+\NormalTok{)}
+
+\NormalTok{model1 }\OtherTok{\textless{}{-}} \FunctionTok{lm}\NormalTok{(grades }\SpecialCharTok{\textasciitilde{}}\NormalTok{ betweenness\_centrality, }\AttributeTok{data =}\NormalTok{ data)}
+\FunctionTok{summary}\NormalTok{(model1)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+## Call:
+## lm(formula = grades ~ betweenness_centrality, data = data)
+## 
+## Residuals:
+##     Min      1Q  Median      3Q     Max 
+## -1.5323 -0.5323 -0.5323  0.4677  1.4677 
+## 
+## Coefficients: (1 not defined because of singularities)
+##                        Estimate Std. Error t value Pr(>|t|)    
+## (Intercept)             8.53232    0.06369     134   <2e-16 ***
+## betweenness_centrality       NA         NA      NA       NA    
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+## 
+## Residual standard error: 1.033 on 262 degrees of freedom
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{length}\NormalTok{(}\FunctionTok{unique}\NormalTok{(data}\SpecialCharTok{$}\NormalTok{betweenness\_centrality))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 1
+\end{verbatim}
+
+\hypertarget{ux438ux43dux442ux435ux440ux43fux440ux435ux442ux430ux446ux438ux44f-ux440ux435ux437ux443ux43bux44cux442ux430ux442ux43eux432-4}{%
+\subsubsection{Интерпретация
+результатов:}\label{ux438ux43dux442ux435ux440ux43fux440ux435ux442ux430ux446ux438ux44f-ux440ux435ux437ux443ux43bux44cux442ux430ux442ux43eux432-4}}
+
+Так как межпосредническая центральность одинакова для всех наблюдений
+(количество уникальных значений межпосреднической центральности равно
+1), она не изменяется среди научных руководителей, и, следовательно,
+невозможно оценить её влияние на оценки дипломных работ.
+
+\textbf{H3}: Научные руководители, работающие с большим количеством
+студентов, имеют более высокую степень входящих связей в сети. Это может
+влиять на структуру сети, увеличивая вероятность наличия связей между
+студентами этих научных руководителей.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(ergm)}
+
+\FunctionTok{V}\NormalTok{(g)}\SpecialCharTok{$}\NormalTok{in\_degree\_centrality }\OtherTok{\textless{}{-}}\NormalTok{ in\_degree\_centrality}
+
+\NormalTok{median\_in\_degree }\OtherTok{\textless{}{-}} \FunctionTok{median}\NormalTok{(in\_degree\_centrality)}
+\FunctionTok{V}\NormalTok{(g)}\SpecialCharTok{$}\NormalTok{influential }\OtherTok{\textless{}{-}} \FunctionTok{ifelse}\NormalTok{(}\FunctionTok{V}\NormalTok{(g)}\SpecialCharTok{$}\NormalTok{in\_degree\_centrality }\SpecialCharTok{\textgreater{}}\NormalTok{ median\_in\_degree, }\DecValTok{1}\NormalTok{, }\DecValTok{0}\NormalTok{)}
+
+\NormalTok{net }\OtherTok{\textless{}{-}}\NormalTok{ network}\SpecialCharTok{::}\FunctionTok{as.network.matrix}\NormalTok{(}\FunctionTok{as.matrix}\NormalTok{(g), }\AttributeTok{directed =} \ConstantTok{TRUE}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## <sparse>[ <logic> ]: .M.sub.i.logical() maybe inefficient
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{set.vertex.attribute}\NormalTok{(net, }\StringTok{"influential"}\NormalTok{, }\FunctionTok{V}\NormalTok{(g)}\SpecialCharTok{$}\NormalTok{influential)}
+
+\NormalTok{ergm\_model }\OtherTok{\textless{}{-}} \FunctionTok{ergm}\NormalTok{(net }\SpecialCharTok{\textasciitilde{}}\NormalTok{ edges }\SpecialCharTok{+} \FunctionTok{nodecov}\NormalTok{(}\StringTok{"influential"}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Starting maximum pseudolikelihood estimation (MPLE):
+\end{verbatim}
+
+\begin{verbatim}
+## Obtaining the responsible dyads.
+\end{verbatim}
+
+\begin{verbatim}
+## Evaluating the predictor and response matrix.
+\end{verbatim}
+
+\begin{verbatim}
+## Maximizing the pseudolikelihood.
+\end{verbatim}
+
+\begin{verbatim}
+## Finished MPLE.
+\end{verbatim}
+
+\begin{verbatim}
+## Evaluating log-likelihood at the estimate.
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{summary}\NormalTok{(ergm\_model)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Call:
+## ergm(formula = net ~ edges + nodecov("influential"))
+## 
+## Maximum Likelihood Results:
+## 
+##                     Estimate Std. Error MCMC % z value Pr(>|z|)    
+## edges               -6.94166    0.10700      0 -64.878   <1e-04 ***
+## nodecov.influential  0.74804    0.08746      0   8.553   <1e-04 ***
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+## 
+##      Null Deviance: 204950  on 147840  degrees of freedom
+##  Residual Deviance:   3784  on 147838  degrees of freedom
+##  
+## AIC: 3788  BIC: 3808  (Smaller is better. MC Std. Err. = 0)
+\end{verbatim}
+
+\hypertarget{ux438ux43dux442ux435ux440ux43fux440ux435ux442ux430ux446ux438ux44f-ux440ux435ux437ux443ux43bux44cux442ux430ux442ux43eux432-5}{%
+\subsubsection{Интерпретация
+результатов:}\label{ux438ux43dux442ux435ux440ux43fux440ux435ux442ux430ux446ux438ux44f-ux440ux435ux437ux443ux43bux44cux442ux430ux442ux43eux432-5}}
+
+Коэффициент для рёбер (edges) равен -6.94, что указывает на общую
+тенденцию к отсутствию связей в сети. Это значение значимо отличается от
+нуля (p \textless{} 0.001), что означает, что в сети меньше связей, чем
+можно было бы ожидать случайным образом, сеть является разряженной.
+
+Коэффициент для влиятельности узлов (атрибут influential) равен 0.75,
+что указывает на то, что узлы, обозначенные как влиятельные, имеют
+тенденцию иметь больше связей. Это значение также значимо отличается от
+нуля (p \textless{} 0.001), что подтверждает вашу гипотезу о том, что
+влиятельные узлы играют важную роль в сети. Таким образом, научные
+руководители с высокой степенью входящих связей (обозначенные как
+влиятельные) имеют тенденцию к увеличению числа своих связей,они
+становятся ещё более центральными в сети, что может указывать на наличие
+положительной обратной связи, где более ``популярные'' руководители
+привлекают ещё больше студентов.
+
+Итак, исходя из предложенной гипотезы, наши результаты подтверждают
+предположение о том, что научные руководители, взаимодействующие с
+большим числом студентов, занимают ключевую позицию в структуре сети.
+Это обстоятельство может привести к формированию более тесно связанных
+подгрупп в рамках сети, при этом студенты, находящиеся под руководством
+этих влиятельных наставников, скорее всего, будут взаимосвязаны между
+собой. Также возможны разнообразные социальные и академические эффекты,
+характер которых будет зависеть от конкретного контекста исследования, к
+ним относятся распространение информации, создание академических
+коллективов и возможности для совместной работы.
+
+\hypertarget{ux437ux430ux43aux43bux44eux447ux435ux43dux438ux435}{%
+\subsection{8.
+Заключение}\label{ux437ux430ux43aux43bux44eux447ux435ux43dux438ux435}}
+
+В рамках нашего исследования мы погрузились в анализ сети выпускников
+Факультета социальных наук НИУ ВШЭ и их научных руководителей. И вот что
+нам удалось выяснить:
+
+\textbf{Гипотеза 1 (H1)}: Мы предположили, что оценки за дипломные
+работы студентов будут выше, если их научные руководители занимают
+центральное положение в сети. И, оказывается, мы были правы! Существует
+заметная связь между центральностью руководителя и оценками выпускников.
+Но стоит отметить, что модель объясняет только 12\% разницы в оценках,
+так что, вероятно, есть и другие факторы, которые стоит учитывать.
+
+\textbf{Гипотеза 2 (H2)}: Мы также рассматривали возможность того, что
+руководители с высоким уровнем межпосреднической центральности могут
+оказывать более разнообразное влияние на итоговые оценки студентов.
+Однако, к сожалению, все участники сети оказались на одном уровне
+межпосреднической центральности, и мы не смогли проверить эту гипотезу.
+
+\textbf{Гипотеза 3 (H3)}: Ну и наконец, мы предположили, что
+руководители, которые работают с большим количеством студентов, занимают
+более важное место в сети. И это подтвердилось! Эти ``влиятельные''
+руководители действительно играют ключевую роль, укрепляя связи между
+студентами и способствуя формированию более плотной и взаимосвязанной
+структуры сети.
+
+Таким образом, наше исследование позволило нам лучше понять, как
+устроена сеть взаимоотношений между студентами и их руководителями на
+ФСН НИУ ВШЭ. Мы выявили некоторые ключевые тенденции и паттерны, хотя
+для более глубокого анализа и понимания всех аспектов этой сети
+потребуются дополнительные исследования.
+
+\end{document}
